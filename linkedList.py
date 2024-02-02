@@ -22,21 +22,42 @@ class linkedList:
             ptr = ptr.next
         return length
     
-    def getKthNode(self,k):
-        if k > self.getLength():
+    def getNode(self,k):
+        if k > self.getLength() or k <= 0:
             raise IndexError("k is greater than length of lindeList")
         
         ptr = self.head
         for i in range(k-1):
             ptr = ptr.next
         return ptr
+    
+    def removeNode(self,k):
+        if k > self.getLength() or k <= 0:
+            raise IndexError("k is greater than length of lindeList")
+        
+        prev = None
+        ptr = self.head
+        for i in range(k-1):
+            prev = ptr
+            ptr = ptr.next
+        
+        if prev:
+            prev.next = ptr.next
+            return prev
+        else:
+            return ptr.next
+
+
 
 lis = linkedList("one")
 lis.add("two")
 lis.add("three")
+
 print(lis.getLength())
-kthNode = lis.getKthNode(2)
-print(kthNode.val)
-anotherKthNode = lis.getKthNode(4)
-print(anotherKthNode.val)
+
+lis.removeNode(2)
+print(lis.getLength())
+print(lis.getNode(2).val)
+
+
 
