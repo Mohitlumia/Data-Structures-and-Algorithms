@@ -29,7 +29,7 @@ class queue:
 # creating queue instance with root
 bfs = queue(root)
 
-values = [] # contains values
+values = [] # contains values of binary tree in bfs order
 
 while bfs.Queue: # loop until it contains any node
     
