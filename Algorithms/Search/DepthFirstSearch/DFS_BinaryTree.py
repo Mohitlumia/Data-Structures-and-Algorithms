@@ -5,8 +5,8 @@ def DFS_binaryTree(root):
     if not root:
         return
     #left
-    DFS_BinaryTree(root.left)
+    DFS_binaryTree(root.left)
     # mid
     print(root.val)
     # right
-    DFS_BinaryTree(root.right)
+    DFS_binaryTree(root.right)
