@@ -1,7 +1,7 @@
 
 # dfs in binary tree is identical to inorder traversal
 
-def DFS_BinaryTree(root):
+def DFS_binaryTree(root):
     if not root:
         return
     #left
