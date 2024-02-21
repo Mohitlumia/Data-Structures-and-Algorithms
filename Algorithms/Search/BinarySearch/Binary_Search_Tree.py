@@ -34,6 +34,13 @@ class binarySearchTree:
         else:
             min = self.val
         return min
+    
+    def find_max(self):
+        if self.right:
+            max = self.right.find_max()
+        else:
+            max = self.val
+        return max
 
 
 nums = [9,12,3,4,6,5,7,78,34,34]
@@ -44,4 +51,5 @@ for element in nums:
    root.add_node(element)
 
 print(root.inorder())
-print(root.find_min())
+print(f"{root.find_min()} and {root.find_max()} is minimum and maximum value in the given BST respectively")
+
