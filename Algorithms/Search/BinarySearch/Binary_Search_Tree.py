@@ -41,6 +41,17 @@ class binarySearchTree:
         else:
             max = self.val
         return max
+    
+    def delete(self,node_val):
+        if node_val < self.val:
+            if self.left:
+                self.left.delete(node_val)
+        elif node_val > self.val:
+            if self.right:
+                self.right.delete(node_val)
+        else:
+            pass
+
 
 
 nums = [9,12,3,4,6,5,7,78,34,34]
