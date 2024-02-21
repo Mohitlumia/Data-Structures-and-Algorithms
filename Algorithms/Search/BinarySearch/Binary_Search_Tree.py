@@ -27,6 +27,13 @@ class binarySearchTree:
         if self.right:
             order += self.right.inorder()
         return order
+    
+    def find_min(self):
+        if self.left:
+            min = self.left.find_min()
+        else:
+            min = self.val
+        return min
 
 
 nums = [9,12,3,4,6,5,7,78,34,34]
@@ -37,3 +44,4 @@ for element in nums:
    root.add_node(element)
 
 print(root.inorder())
+print(root.find_min())
