@@ -45,10 +45,10 @@ class binarySearchTree:
     def delete(self,node_val):
         if node_val < self.val:
             if self.left:
-                self.left.delete(node_val)
+                self.left = self.left.delete(node_val)
         elif node_val > self.val:
             if self.right:
-                self.right.delete(node_val)
+                self.right = self.right.delete(node_val)
         else:
             if self.left is None and self.right is None:
                 return None
@@ -75,5 +75,5 @@ for element in nums:
 
 print(root.inorder())
 print(f"{root.find_min()} and {root.find_max()} is minimum and maximum value in the given BST respectively")
-root.delete(9)
+root.delete(5)
 print(root.inorder())
