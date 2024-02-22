@@ -1,23 +1,25 @@
 
-class node:
+class linkedList:
     def __init__(self,data,next=None):
         self.val = data
         self.next = next
-
-
-class linkeList:
-    def __init__(self,data):
-        self.root = node(data)
-        self.length = 1
     
     def add(self,data):
-        ptr = self.root # initiating pointer
-        while ptr.next: # loop until reach last node
-            ptr = ptr.next
-        ptr.next = node(data)
+        if self.next:
+            self.next.add(data)
+        else:
+            self.next = linkedList(data)
+    
+    def getList(self):
+        if self.next:
+            return [self.val] + self.next.getList()
+        else:
+            return [self.val]
 
-llist = linkeList(0)
-llist.add(1)
 
-print(llist.root.val)
-print(llist.root.next.val)
+
+lis = linkedList(0)
+lis.add(1)
+print(lis.getList())
+
+
