@@ -41,6 +41,6 @@ for i in range(1,10):
 
 print(lis.getList()) # get linkedList as a list
 print(lis.length()) # get length of linkedList
-lis = lis.remove(10) # remove likedList node at index
+lis.remove(1) # remove likedList node at index
 print(lis.getList())
 print(lis.length())
