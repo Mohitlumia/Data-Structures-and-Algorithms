@@ -10,6 +10,12 @@ class linkedList:
         else:
             self.next = linkedList(data)
     
+    def length(self):
+        if self.next:
+            return 1 + self.next.length()
+        else:
+            return 1
+
     def getList(self):
         if self.next:
             return [self.val] + self.next.getList()
@@ -21,5 +27,4 @@ class linkedList:
 lis = linkedList(0)
 lis.add(1)
 print(lis.getList())
-
-
+print(lis.length())
