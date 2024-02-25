@@ -1,6 +1,7 @@
+# directed graph also known as digraph
+# it cointains link between start and end node
 
-
-class Graph:
+class DirectedGraph:
 
     def __init__(self, edges):
         self.edges = edges
@@ -51,7 +52,7 @@ if __name__ == '__main__':
     ]
 
 
-    route_graph = Graph(routes)
+    route_graph = DirectedGraph(routes)
 
     start = "Mumbai"
     end = "Bangaluru"
