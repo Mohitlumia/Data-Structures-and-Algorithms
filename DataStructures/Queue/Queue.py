@@ -25,3 +25,20 @@ class Queue:
         else:
             print("Queue is empty")
             return None
+
+
+# Create a queue
+q = Queue()
+
+# Enqueue elements
+q.enqueue(1)
+q.enqueue(2)
+
+# Dequeue elements
+print(q.dequeue())      # Output: 1
+
+# Check if the queue is empty
+print(q.is_empty())     # Output: False
+
+# peek element
+print(q.peek())         # Output: first element without removing
