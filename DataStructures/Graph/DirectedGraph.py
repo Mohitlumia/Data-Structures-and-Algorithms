@@ -3,24 +3,20 @@
 
 class DirectedGraph:
 
-    def __init__(self, edges):
-        self.edges = edges
+    def __init__(self):
         self.graph_dict = {}
-        for start, end in edges:
-            if start in self.graph_dict:
-                self.graph_dict[start].append(end)
-            else:
-                self.graph_dict[start] = [end]
-            
-        print("Graph Dict:", self.graph_dict)
-
+        
+    def add_edge(self, start, end):
+        if start in self.graph_dict:
+            self.graph_dict[start].append(end)
+        else:
+            self.graph_dict[start] = [end]
 
     def get_paths(self, start, end, path=[]):
         path = path + [start]
 
         if start == end:
             return [path]
-
         if start not in self.graph_dict:
             return []
 
@@ -33,6 +29,16 @@ class DirectedGraph:
 
         return paths
 
+
+
+# Helper function to add all edges into graph
+
+def add_all_edges(routes):
+    # Initiate object of class DirectedGraph
+    obj = DirectedGraph()
+    for start, end in routes:
+        obj.add_edge(start, end)
+    return obj
 
 
 if __name__ == '__main__':
@@ -51,10 +57,12 @@ if __name__ == '__main__':
         ("Chennai", "Bangaluru")
     ]
 
+    route_graph = add_all_edges(routes)
 
-    route_graph = DirectedGraph(routes)
-
+    # get all paths from start edge to end edge
     start = "Mumbai"
     end = "Bangaluru"
 
-    print(f"All paths between: {start} and {end}: ",route_graph.get_paths(start,end))
+    paths = route_graph.get_paths(start, end)
+
+    print(f"All paths between: {start} and {end}: ",paths)
