@@ -1,20 +1,32 @@
 
-class tree:
-    def __init__(self,data):
-        self.val = data
-        self.child = []
-    
-    def add_child(self,child):
-        self.child.append(child)
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.children = []
 
-root = tree(0)
+    def add_child(self, child):
+        self.children.append(child)
 
-child1 = tree(1)
-child2 = tree(2)
-child3 = tree(3)
-child4 = tree(4)
+def print_tree(node, level=0):
+    if node is None:
+        return
+    print("   " * level + "|--", node.data)
+    for child in node.children:
+        print_tree(child, level + 1)
 
-root.add_child(child1)
-root.add_child(child2)
-root.add_child(child3)
-root.add_child(child4)
+# Example usage:
+if __name__ == "__main__":
+    root = TreeNode("A")
+    b = TreeNode("B")
+    c = TreeNode("C")
+    d = TreeNode("D")
+    e = TreeNode("E")
+    f = TreeNode("F")
+
+    root.add_child(b)
+    root.add_child(c)
+    b.add_child(d)
+    b.add_child(e)
+    c.add_child(f)
+
+    print_tree(root)
