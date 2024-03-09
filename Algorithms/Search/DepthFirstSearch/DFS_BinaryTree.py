@@ -1,12 +1,49 @@
 
-# dfs in binary tree is identical to inorder traversal
+# dfs in a binary tree is identical to inorder traversal
 
-def DFS_binaryTree(root):
-    if not root:
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def dfs(root):
+    if root is None:
         return
-    #left
-    DFS_binaryTree(root.left)
-    # mid
-    print(root.val)
-    # right
-    DFS_binaryTree(root.right)
+    
+    # Initialize an empty stack for DFS traversal
+    stack = []
+    # Push the root node onto the stack
+    stack.append(root)
+    
+    # Continue traversal until the stack is empty
+    while stack:
+        # Pop the top node from the stack
+        node = stack.pop()
+        # Visit the popped node
+        print(node.value, end=' ')
+        
+        # Push the right child onto the stack first
+        if node.right:
+            stack.append(node.right)
+        # Push the left child onto the stack
+        if node.left:
+            stack.append(node.left)
+
+# Example usage:
+# Constructing a binary tree
+#        1
+#       / \
+#      2   3
+#     / \
+#    4   5
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+# Calling DFS on the tree
+print("DFS traversal:")
+dfs(root)
