@@ -22,6 +22,16 @@ def partion(start,end,elements):
     return end
 
 def quick_sort(start,end,elements):
+    """
+    quick_sort has linearithmic time and logarithmic space complexity on average.
+    
+    Time Complexity:-
+
+        Average Case:   O(n log n)
+        Worst Case:     O(n^2)
+
+    Space Complexity::- O(log n)
+    """
     
     if start < end:
         pi = partion(start,end,elements)
