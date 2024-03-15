@@ -11,6 +11,12 @@ class Graph:
         self.adj_list[v].append(u)
 
 def dfs(graph, start_node):
+    """
+    DFS in graph has linear time and linear space complexity.
+    
+    Time Complexity:    O(v + e), where "v" is the number of vertices and "e" is the number of edges in the graph.
+    Space Complexity:   O(v)
+    """
     visited = set()
 
     def dfs_recursive(node):

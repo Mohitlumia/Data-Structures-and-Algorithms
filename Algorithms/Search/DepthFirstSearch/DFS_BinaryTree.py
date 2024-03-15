@@ -8,6 +8,12 @@ class TreeNode:
         self.right = None
 
 def dfs(root):
+    """
+    DFS in binary tree has linear time and linear space complexity.
+    
+    Time Complexity:    O(n), where "n" is the number of nodes in the binary tree.
+    Space Complexity:   O(h), where "h" is the height of the binary tree, and in the worst case "h = n" for a skewed binary tree..
+    """
     if root is None:
         return
     

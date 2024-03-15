@@ -1,6 +1,7 @@
 from collections import defaultdict
 
 class Graph:
+    
     def __init__(self):
         self.graph = defaultdict(list)
 
@@ -8,6 +9,12 @@ class Graph:
         self.graph[u].append(v)
 
     def bfs(self, start):
+        """
+        BFS in graph has linear time and linear space complexity.
+        
+        Time Complexity:    O(v + e), where "v" is the number of vertices and "e" is the number of edges in the graph.
+        Space Complexity:   O(v)
+        """
         visited = set()
         queue = [start]
         traversal = []

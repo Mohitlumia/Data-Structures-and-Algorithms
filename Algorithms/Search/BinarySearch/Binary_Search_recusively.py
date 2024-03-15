@@ -1,6 +1,12 @@
 
 
 def binary_search_recursive(numbers_list, number_to_find, left_index, right_index):
+    """
+    iterative binary search has logarithmic time and logrithmic space complexity.
+    
+    Time Complexity:    O(log n)
+    Space Complexity:   O(log n)
+    """
     if left_index > right_index:
         return -1
     

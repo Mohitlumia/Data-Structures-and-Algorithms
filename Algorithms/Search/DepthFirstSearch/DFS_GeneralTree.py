@@ -4,6 +4,12 @@ class TreeNode:
         self.children = []
 
 def dfs(root):
+    """
+    DFS in general tree has linear time and linear space complexity.
+    
+    Time Complexity:    O(v + e), where "v" is the number of vertices and "e" is the number of edges in the tree.
+    Space Complexity:   O(h), where "h" is the height of the tree.
+    """
     if root is None:
         return
     

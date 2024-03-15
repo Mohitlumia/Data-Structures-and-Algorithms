@@ -8,6 +8,12 @@ class TreeNode:
         self.right = None
 
 def bfs(root):
+    """
+    BFS in binary tree has linear time and linear space complexity.
+    
+    Time Complexity:    O(n), where "n" is the number of nodes in the binary tree.
+    Space Complexity:   O(w), where "w" is the maximum width (maximum number of nodes at any level) of the binary tree.
+    """
     if root is None:
         return []
 
