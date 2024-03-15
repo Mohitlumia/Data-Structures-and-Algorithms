@@ -4,11 +4,23 @@ class UnionFind:
         self.rank = [0] * n
     
     def find(self, x):
+        """
+        find has logarithmic time and constant space complexity.
+        
+        Time Complexity:    O(log n)
+        Space Complexity:   O(1)
+        """
         if self.parent[x] != x:
             self.parent[x] = self.find(self.parent[x])
         return self.parent[x]
     
     def union(self, x, y):
+        """
+        union has logarithmic time and constant space complexity.
+        
+        Time Complexity:    O(log n)
+        Space Complexity:   O(1)
+        """
         root_x = self.find(x)
         root_y = self.find(y)
         

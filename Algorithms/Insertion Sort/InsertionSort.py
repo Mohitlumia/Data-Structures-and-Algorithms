@@ -1,10 +1,14 @@
 
 def insertion_sort(elements):
     """
-    Method with quadratic time and constant space complexity.
-        
-    Time Complexity: O(n^2)
-    Space Complexity: O(1)
+    insertion_sort has quadratic time and constant space complexity on average.
+    
+    Time Complexity:-
+        Best Case:      O(n), when array is already sorted.
+        Average Case:   O(n^2)
+        Worst Case:     O(n^2)
+
+    Space Complexity::- O(1)
     """
     n = len(elements)
     for i in range(1,n):

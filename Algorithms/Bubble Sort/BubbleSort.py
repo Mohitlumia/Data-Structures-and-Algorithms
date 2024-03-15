@@ -1,6 +1,16 @@
 
 
 def BubbleSort(elements):
+    """
+    BubbleSort has quadratic time and constant space complexity on average.
+    
+    Time Complexity:-
+        Best Case:      O(n), when array is already sorted.
+        Average Case:   O(n^2)
+        Worst Case:     O(n^2)
+
+    Space Complexity::- O(1)
+    """
     size = len(elements)
     for _ in range(size-1):
         swaped = False
