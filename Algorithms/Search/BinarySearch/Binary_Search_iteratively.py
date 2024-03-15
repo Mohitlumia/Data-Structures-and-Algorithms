@@ -1,6 +1,12 @@
 
 
 def binary_search(numbers_list, number_to_find):
+    """
+    iterative binary search has logarithmic time and constant space complexity.
+    
+    Time Complexity:    O(log n)
+    Space Complexity:   O(1)
+    """
     left_index = 0
     right_index = len(numbers_list) - 1
     mid_index = 0
